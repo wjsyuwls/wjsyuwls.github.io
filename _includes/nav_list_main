@@ -1,0 +1,94 @@
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+{% assign sum = site.posts | size %}
+
+<nav class="nav__list">
+    <input id="ac-toc" name="accordion-toc" type="checkbox"/>
+    <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+    <ul class="nav__items" id="category_tag_menu">
+        <!--전체 글 수-->
+        <li>
+            📂
+            <span style="font-family: Cafe24Oneprettynight; font-size: 0.80em;">전체 글 수</style>
+            <span style="font-family:'Coming Soon';">{{sum}}</style>
+            <span style="font-family: Cafe24Oneprettynight;">개</style>
+        </li>
+        <li>
+
+            <!-- blockchain -->
+            <span class="nav__sub-title">BLOCKCHAIN</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Blockchain" %}
+                        <li>
+                            <a href="/categories/blockchain" class="">블록체인 이론 ({{category[1].size}})</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <!-- javascript -->
+            <span class="nav__sub-title">REACT & NODE</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "React" %}
+                        <li>
+                            <a href="/categories/react" class="">REACT ({{category[1].size}})</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Node" %}
+                        <li>
+                            <a href="/categories/node" class="">NODE ({{category[1].size}})</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <!-- javascript -->
+            <span class="nav__sub-title">JAVASCRIPT</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Javascript" %}
+                        <li>
+                            <a href="/categories/javascript" class="">JAVASCRIPT ({{category[1].size}})</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <!-- coding test -->
+            <span class="nav__sub-title">Coding Test</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Algorithm" %}
+                        <li>
+                            <a href="/categories/algorithm" class="">알고리즘 구현 (with java) ({{category[1].size}})</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Baekjoon" %}
+                        <li>
+                            <a href="/categories/baekjoon" class="">백준 ({{category[1].size}})</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Programmers" %}
+                        <li>
+                            <a href="/categories/programmers" class="">프로그래머스 ({{category[1].size}})</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</nav>
